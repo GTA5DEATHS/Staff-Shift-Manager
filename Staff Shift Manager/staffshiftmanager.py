@@ -18,7 +18,7 @@ class Roleplayer:
         }
         self.error_message = ""
         self.temp_file = "temp_stafflog.txt"
-        self.version = "1.2"  # Updated version
+        self.version = "1.4"  
         self.last_checked = datetime.datetime.now()
         self.load_temp_file()
 
@@ -26,7 +26,6 @@ class Roleplayer:
         if os.path.exists(self.temp_file):
             with open(self.temp_file, "r") as file:
                 self.options = json.load(file)
-            # Convert keys back to integers
             self.options = {int(k): v for k, v in self.options.items()}
 
     def save_temp_file(self):
@@ -73,7 +72,6 @@ class Roleplayer:
                     f"{self.options[option]['name']}: {self.options[option]['points']} points")
             elapsed_time = time.time() - start_time
 
-            # Create the "logs" directory if it doesn't exist
             if not os.path.exists("logs"):
                 os.makedirs("logs")
 
@@ -87,7 +85,7 @@ class Roleplayer:
             os.remove(self.temp_file)
             return True
         elif confirm == 'n':
-            self.error_message = ""  # Reset the error message
+            self.error_message = ""  
             return False
         else:
             self.error_message = "Invalid input. Please enter a valid option."
@@ -97,11 +95,11 @@ class Roleplayer:
 def main():
     start_time = time.time()
     roleplayer = Roleplayer()
-    print("Tool created by Cactos, Version 1.3, Do not steal.")
+    print("Tool created by Cactos, Version 1.4, Do not steal.")
     print("Remember To Always Check The Punishment Information")
     while True:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("Tool created by Cactos, Version 1.3, Do not steal.")
+        print("Tool created by Cactos, Version 1.4, Do not steal.")
         print("Remember To Always Check The Punishment Information")
         print(
             f"Current time: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
