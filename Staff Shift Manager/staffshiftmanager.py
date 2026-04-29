@@ -52,6 +52,15 @@ class Roleplayer:
         else:
             self.error_message = "Invalid option. Please enter a valid option."
 
+    def show_info(self):
+        info_file = "info.txt"
+        print("\n--- Information ---\n")
+        if os.path.exists(info_file):
+            with open(info_file, "r") as file:
+                print(file.read())
+        else:
+            print("Info file not found. Create 'info.txt' in the same folder.")
+
     def finish_deployment(self, start_time):
         print("Are you sure you want to finish your shift? Press 'Y' to confirm or 'N' to return back.")
         confirm = input().lower()
@@ -103,7 +112,7 @@ def main():
         if roleplayer.error_message:
             print(f"Latest Error: {roleplayer.error_message}")
         user_input = input(
-            "Select an option or type 'F' to go off duty or 'R' to remove points or 'K' to exit the program: ")
+            "Select an option or 'I' to view info or type 'F' to go off duty or 'R' to remove points or 'K' to exit the program: ")
         if user_input.lower() == 'f':
             if roleplayer.finish_deployment(start_time):
                 elapsed_time = time.time() - start_time
@@ -122,8 +131,8 @@ def main():
             print("Exiting the program...")
             break
         elif user_input.lower() == 'i':
-            print(f"Version: {roleplayer.version}")
-            time.sleep(10)
+            roleplayer.show_info()
+            input("\nPress Enter to continue...")
         else:
             try:
                 roleplayer.select_option(int(user_input))
