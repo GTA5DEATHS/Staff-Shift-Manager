@@ -97,11 +97,11 @@ class Roleplayer:
 def main():
     start_time = time.time()
     roleplayer = Roleplayer()
-    print("Tool created by Cactos, Version 1.2, Do not steal.")
+    print("Tool created by Cactos, Version 1.3, Do not steal.")
     print("Remember To Always Check The Punishment Information")
     while True:
         os.system('cls' if os.name == 'nt' else 'clear')
-        print("Tool created by Cactos, Version 1.2, Do not steal.")
+        print("Tool created by Cactos, Version 1.3, Do not steal.")
         print("Remember To Always Check The Punishment Information")
         print(
             f"Current time: {datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
