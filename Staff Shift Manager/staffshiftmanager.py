@@ -18,7 +18,7 @@ class Roleplayer:
         }
         self.error_message = ""
         self.temp_file = "temp_stafflog.txt"
-        self.version = "1.0.4"  # Updated version
+        self.version = "1.2"  # Updated version
         self.last_checked = datetime.datetime.now()
         self.load_temp_file()
 
