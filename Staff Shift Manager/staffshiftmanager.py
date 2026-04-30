@@ -92,7 +92,6 @@ class Roleplayer:
         else:
             print("Create 'info.txt' in the folder.")
 
-    # ✅ NEW FEATURE
     def view_logs(self):
         print("\n--- Current Logs ---\n")
 
